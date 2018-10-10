@@ -1,28 +1,26 @@
 # SITE CONFIGURATION
 baseurl: ""
-url: "https://aladmit.com"
+url: https://aladmit.com
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type Theme
+  title: Александров Андрей
   avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  description: Блог Александров Андрей -- DevOps консультант, ведущий DevOps Deflope
 
   # Header and footer text
   header_text: >
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
+     <p>Александров Андрей — DevOps консультант, ведущий <a href="https://devopsdeflope.ru/">DevOps Deflope</a></p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
   # Icons
   rss: false
-  email_address:
+  email_address: postgred@gmail.com
   behance:
   bitbucket:
   dribbble:
@@ -32,14 +30,14 @@ theme_settings:
   github: "aladmit"
   google_plus:
   instagram:
-  linkedin:
+  linkedin: "https://www.linkedin.com/in/aladmit/"
   pinterest:
   reddit:
   soundcloud:
   stack_exchange:
   steam:
   tumblr:
-  twitter:
+  twitter: postgred
   wordpress:
   youtube:
 
