@@ -53,5 +53,13 @@ header {
   }
   .post-content {
     @extend %padding-regular;
+
+    p {
+      text-align: justify;
+    }
+
+    a {
+      text-decoration-style: solid;
+    }
   }
 }

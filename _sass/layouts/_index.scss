@@ -8,12 +8,17 @@
   font-size: 1.2em;
   text-align: center;
   color: $header-desc-text-color;
+
+  a {
+    color: $header-desc-link-color;
+    text-decoration: underline;
+  }
 }
 .call-out p:last-child {
   margin-bottom: 0;
 }
 .call-out a {
-  color: $header-desc-link-color
+  color: $header-desc-link-color;
 }
 // Post listing
 .posts {
