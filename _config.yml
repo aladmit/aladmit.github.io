@@ -9,11 +9,11 @@ theme_settings:
   avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
-  description: Блог Александров Андрей -- DevOps консультант, ведущий DevOps Deflope
+  description: Блог Александров Андрей -- DevOps-консультант, ведущий DevOps Deflope
 
   # Header and footer text
   header_text: >
-     <p>Александров Андрей — DevOps консультант, ведущий <a href="https://devopsdeflope.ru/">DevOps Deflope</a></p>
+     <p>Александров Андрей — DevOps-консультант, ведущий <a href="https://devopsdeflope.ru/">DevOps Deflope</a></p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>

@@ -10,7 +10,11 @@ layout: default
       {% if page.author %} - {{ page.author }}{% endif %}
     </p>
   </header>
-  <section class="post-content">{{ content }}</section>
+  <section class="post-content">
+    {{ content }}
+
+    P.S. Следить за выходами постов можно в <b><a href="https://t.me/aladmit_world">телеграм канале</a></b>
+  </section>
   {% include tags_list.html tags=page.tags tag_count=page.tags.size %}
 </article>
 
