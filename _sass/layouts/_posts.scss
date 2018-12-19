@@ -24,6 +24,10 @@ article {
   .footnotes {
     font-size: 0.9em;
   }
+  .video {
+    padding-top: $padding-small;
+    padding-bottom: $padding-small;
+  }
 }
 header {
   h1 {
@@ -53,6 +57,8 @@ header {
   }
   .post-content {
     @extend %padding-regular;
+
+    padding: 0% $padding-large;
 
     p {
       text-align: justify;
