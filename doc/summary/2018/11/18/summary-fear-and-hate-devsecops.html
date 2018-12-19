@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Конспект доклада "Страх и ненависть DevSecOps Шабалин Юрий, Swordfish Security" | Александров Андрей</title>
+	<meta name="description" content="Суть: хотим предотвращать появление уязвимостей, а не обнаруживать их. Для этого разработчикам можно дать инструменты сканирования.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/summary/2018/11/18/summary-fear-and-hate-devsecops.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Александров Андрей" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+
+	<!-- Google Analytics -->
+	
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-129388859-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/assets/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Александров Андрей</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					Обо мне
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					Теги
+				</a>
+			</li>
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+<li>
+	<a href="mailto:postgred@gmail.com" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/aladmit" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/aladmit/" title="Follow on LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/postgred" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header style="background-image: url('/')">
+    <h1 class="title">Конспект доклада "Страх и ненависть DevSecOps Шабалин Юрий, Swordfish Security"</h1>
+    
+    <p class="meta">
+      November 18, 2018
+      
+    </p>
+  </header>
+  <section class="post-content">
+    <p>Суть: хотим предотвращать появление уязвимостей, а не обнаруживать их. Для этого разработчикам можно дать инструменты сканирования.</p>
+
+<div class="video"><figure><iframe width="640" height="480" src="//www.youtube.com/embed/ROH636e7Rx8" frameborder="0" allowfullscreen=""></iframe></figure></div>
+
+<h2 id="application-security">Application Security</h2>
+
+<p>Безопасность приложений. Тестируем приложения, интегрируемся с разработкой. Мы хотим предотвратить появление уязвимостей, а не обнаружить их.</p>
+
+<p>Существующие подходы: OWASP, BSIMM, OpenSAMM. Рекомендуемый: BSIMM</p>
+
+<p>Как сейчас: безопасность это контролирующий орган, который всех пинает в конце релиза.
+Проблемы:</p>
+
+<ul>
+  <li>Инструменты ИБ отдельно от разработки</li>
+  <li>Особенности процесса разработки не учитываются</li>
+  <li>Проверки ИБ проходят перед релизом</li>
+  <li>Требования ИБ непонятны</li>
+</ul>
+
+<p>Можно купить кучу инструментов безопасности, вывалить кучу уязвимостей, но это не поможет. Нужен процесс.</p>
+
+<p>ИБ должны использовать те же инструменты, что и разработчики: чаты, документация и т.п. Security Champions.</p>
+
+<h2 id="security-champions">Security Champions</h2>
+
+<p>Чувак в команде, который заинтересован в обеспечении безопасности. Т.е. Это разработчик, который работает с инструментами ИБ, консультирует команду об ИБ, проводить код-ревью и тренинги.</p>
+
+<h2 id="Этапы-тестирования">Этапы тестирования</h2>
+
+<h3 id="Статический-анализ">Статический анализ</h3>
+
+<p>Анализ кода на наличие уязвимостей, анализ паттернов, датафлоу, анализ конфигураций.
+Такое сканирование занимает кучу времени, высокий уровень False Nagative/False Positive.</p>
+
+<h4 id="Требование-к-продукту-стат-анализа">Требование к продукту стат. анализа</h4>
+
+<ul>
+  <li>Низкий уровень False Positive</li>
+  <li>Возможности кастомизации</li>
+  <li>Инкрементальные сканирования</li>
+  <li>Интеграция в CI</li>
+  <li>Интеграция в Code Review</li>
+  <li>Интеграция со средой разработки</li>
+  <li>Понимание Roadmap продукта</li>
+</ul>
+
+<p>Инструменты: PVS-Stidio, Chechmarx, veracode, incode, fortify, coverity, positive technologies</p>
+
+<p>Есть OpenSource решения под конкретные языки, на них можно обкатывать процесс.
+Интегрировать решение на PR, делать инкрементальные сканы. Запретить мердж, если тест не пройден. Отправлять отчет в SonarQube.
+Интеграция в CI. Бежит после тестов.</p>
+
+<p>Нельзя после первого скана требовать исправление всего что нашли! Сформируйте технический долг и постепенно его разбирайте.</p>
+
+<p>Все сканы всегда по дельте, чтобы на разработчика не вывались фиксирует по всему проекту.</p>
+
+<h3 id="Контроль-opensource">Контроль OpenSource</h3>
+
+<p>Анализ используемых библиотек на уязвимости в открытых и закрытых источниках
+Анализ лицензии
+Контроль библиотек в периметре организации. По определенным политикам мы можем отсечь использованные библиотеки. Например, отсекать все что с критикал уязвимостью.
+Мониторинг новых уязвимостей в компонентах</p>
+
+<h4 id="Требования-к-инструменту">Требования к инструменту</h4>
+
+<ul>
+  <li>Низкий уровень False Positive</li>
+  <li>Удобство использования, интеграции</li>
+  <li>Разные политики для разных этапов разработки</li>
+  <li>Мониторинг компонентов в проде и организации</li>
+  <li>Поддержка разных сборок, языков, контейнеров</li>
+</ul>
+
+<p>Инструменты: Sonatype Nexus, Source Clear, BlackDuck, Dependency-check, WhiteSource</p>
+
+<p>Интеграция. В CI как этап тестирования, запрет сборки, если там есть критичные баги или запрет деплить в прод. Интеграция в среду разработки, чтобы знать об уязвимостях до коммита. Мониторим что у нас в проде(Nexus IQ).</p>
+
+<h3 id="Динамический-анализ">Динамический анализ</h3>
+
+<p>Анализ уже собранного и развернутого приложения.
+Имитирует работу пользователя, анализирует ответы приложения. Поиск известных уязвимостей. Fuzzing. Проверка конфигурации сервера.</p>
+
+<p>Риски: высокая нагрузка на сервер, нет интеграций, возможность изменения настроек аналитики, отсутствие поддержки технологий, сложность.</p>
+
+<h4 id="Требования-к-инструменту-1">Требования к инструменту</h4>
+
+<ul>
+  <li>Низкий уровень False Positive</li>
+  <li>Наличие интеграций</li>
+  <li>Поддержка технологий</li>
+  <li>Удобноство записи последовательности логина</li>
+  <li>Возможность настройки сканирование(интенсивности и исключение адресов)</li>
+</ul>
+
+<p>Инструменты: Burpsuite, appscan, acunetix, w3af, owasp, microfocus</p>
+
+<p>Интеграция: в CD после установки на стенд. Идеально иметь отдельный стенд для тестирования. До начала тестирования необх записать послед логина. Наличие уязвимостей — не стоппер.</p>
+
+<h2 id="Уязвимости">Уязвимости</h2>
+
+<p>Тоже самое, что и просто баги. У критичности есть ранжирование по критичности, как и у багов, это позволяет их приоретизировать в одном беклоге, т.к. с точки зрения качества ПО они идентичны.</p>
+
+<h2 id="Процесс">Процесс</h2>
+
+<p>Надо собирать метрички(производственные, инструментов, дефект-трекеры)</p>
+
+<h2 id="Ссылки">Ссылки</h2>
+
+<ul>
+  <li><a href="https://youtu.be/ROH636e7Rx8">Запись доклада</a></li>
+  <li><a href="https://speakerdeck.com/devopsmoscow/strakh-i-nienavist-devsecops">Слайды</a></li>
+</ul>
+
+
+    P.S. Следить за выходами постов можно в <b><a href="https://t.me/aladmit_world">телеграм канале</a></b>
+  </section>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82">#конспект</a>
+    
+    <a class="tag" href="/tags#security">#security</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

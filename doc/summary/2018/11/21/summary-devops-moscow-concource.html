@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Конспект доклада "Concource CI с кубиками на чистом YAML. Максим Залысин" | Александров Андрей</title>
+	<meta name="description" content="Суть: Concource CI может интегрироваться с чем угодно с помощью ресурсов, декларативно описывается, легко расширяется.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/summary/2018/11/21/summary-devops-moscow-concource.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Александров Андрей" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+
+	<!-- Google Analytics -->
+	
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-129388859-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/assets/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Александров Андрей</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					Обо мне
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					Теги
+				</a>
+			</li>
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+<li>
+	<a href="mailto:postgred@gmail.com" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/aladmit" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/aladmit/" title="Follow on LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/postgred" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header style="background-image: url('/')">
+    <h1 class="title">Конспект доклада "Concource CI с кубиками на чистом YAML. Максим Залысин"</h1>
+    
+    <p class="meta">
+      November 21, 2018
+      
+    </p>
+  </header>
+  <section class="post-content">
+    <p>Суть: Concource CI может интегрироваться с чем угодно с помощью ресурсов, декларативно описывается, легко расширяется.</p>
+
+<div class="video"><figure><iframe width="640" height="480" src="//www.youtube.com/embed/4PRWZBgUDxU" frameborder="0" allowfullscreen=""></iframe></figure></div>
+
+<h2 id="Из-чего-состоит-concource">Из чего состоит Concource</h2>
+
+<p>Concource написан на go. Состоит из сервера с вебом, апи, шедулером и регистратором воркеров. Через ssh-туннель создается соединение между воркерами (кроссплатформенные) и вебом. Веб хранит данные в постгресе, в котором хранятся пайплайны, логи и т.п. Артефакты конкурс хранить не умеет.</p>
+
+<p>Есть утилита fly, через которую можно взаимодействовать с вебом. Управлять командами, проектами, плайплайнами и т.п. Как правило, всем хватает веб-морды для взаимодействия. Для дебага можно выполнить таск локально или провалиться в уже существующий.</p>
+
+<p>У ребят микросервисы, для каждого из которых конкурс делает тесты, а потом делает отметочку в битбакете, что все ок и пора делать ревью. Когда PR заапрувлен, смержен, протегирован, тесты запускаются заново, делается сборка в контейнер, оповещение в слак. Дальше идет деплой в тест через нажатие тестировщиком кнопки в вебе или изменением манифеста кубера. Дальше тестировщик станет отметочку в задаче, что все ок, можно деплоить в прод. Сейчас договариваться, чтобы деплой в тест и прод происходили полностью автоматически.</p>
+
+<h2 id="Какие-есть-сущности">Какие есть сущности</h2>
+
+<p>Есть пайплайн, который состоит из ресурсов и джобов.
+Ресурсы — кубик, которым конкурс взаимодействует с чем-то. Например, ресурс слак позволяет работать со слаком.
+Джобы, в которых выполняются команды.
+Есть встроенный дашборд со статусом тасков.</p>
+
+<h3 id="resource">Resource</h3>
+
+<p>Есть встроенные ресурсы, их около 20. Например, git, который постоянно проверяет наличие новых коммитов, скачивает код.
+Есть комьюнити-ресурсы. Например, который умеет создавать пулреквесты в битбакет. Объявляем в пайплайне какие внешние ресурсы нам нужны и используем.</p>
+
+<p>Ресурсы могут забирать секреты из разных источников(вольт, кубер и т.п.) или отдельного yml-файла.</p>
+
+<p>Каждый ресурс состоит из 3-х бинарных файлов(check, in, out). Через check ресурс проверят, что ему что делать. In используется внутри джоба, там описано что нужно делать. Out отправляет результат.</p>
+
+<h3 id="job">Job</h3>
+
+<p>Содержит в себе инструкцию. Когда тригериться, какие таски выполнять, какие ресурсы и как использовать, что делать если все упало/прошло успешно. Таски можно выносить в файлы/репозитории и переиспользовать в разных проектах. Таски можно выполнять параллельно и агрегировать результат.</p>
+
+<h3 id="Преимущества">Преимущества</h3>
+
+<ul>
+  <li>YAML</li>
+  <li>CLI</li>
+  <li>Интеграция с чем угодно через Resource</li>
+  <li>Просто написать свой ресурс. Можно написать все три части ресурса на разных языках</li>
+  <li>Job выполняет много танков в связке с разными ресурсами</li>
+  <li>Переиспользуемые таски</li>
+</ul>
+
+<h3 id="Недостатки">Недостатки</h3>
+
+<ul>
+  <li>Воркеры требовательны к ресурсам, иногда они залипают</li>
+  <li>Сложно повторно запустить job на устаревшем ресурсе. Т.е. Если ресурс обновился, конкурс его сразу заберет и придется покостылить, чтобы запустить старый пайплайн на старой версии ресурса</li>
+  <li>Нет разделения доступа по ролям в одной команде</li>
+</ul>
+
+<p>Автор сейчас решает требовательность к ресурсам, переписывает встроенные ресурсы на го.</p>
+
+<h2 id="Ссылки">Ссылки</h2>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=4PRWZBgUDxU">Запись доклада</a></li>
+  <li><a href="https://speakerdeck.com/devopsmoscow/concourse-ci-s-kubikami-i-na-chistom-yaml">Слайды</a></li>
+</ul>
+
+
+    P.S. Следить за выходами постов можно в <b><a href="https://t.me/aladmit_world">телеграм канале</a></b>
+  </section>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82">#конспект</a>
+    
+    <a class="tag" href="/tags#ci">#ci</a>
+    
+    <a class="tag" href="/tags#cd">#cd</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
