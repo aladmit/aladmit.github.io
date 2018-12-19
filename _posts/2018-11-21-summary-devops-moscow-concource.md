@@ -8,7 +8,7 @@ tags: ["конспект", "ci", "cd"]
 
 Суть: Concource CI может интегрироваться с чем угодно с помощью ресурсов, декларативно описывается, легко расширяется.
 
-{% youtube 4PRWZBgUDxU %}
+{% include youtube.html id="4PRWZBgUDxU" %}
 
 ## Из чего состоит Concource
 
