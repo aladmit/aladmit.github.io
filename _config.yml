@@ -6,9 +6,9 @@ url: https://aladmit.com
 theme_settings:
   # Meta
   title: Александров Андрей
-  avatar: assets/img/avatar.png
+  #avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
-  gravatar: # Email MD5 hash
+  #gravatar: # Email MD5 hash
   description: Блог Александров Андрей -- DevOps-консультант, ведущий DevOps Deflope
 
   # Header and footer text
