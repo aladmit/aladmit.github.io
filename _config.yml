@@ -9,7 +9,7 @@ theme_settings:
   #avatar: assets/img/avatar.png
   favicon: assets/dvps.png
   #gravatar: # Email MD5 hash
-  description: Блог Александров Андрей -- DevOps-консультант, ведущий DevOps Deflope
+  description: Блог Александров Андрей -- DevOps-консультант, ведущий DevOps Deflope, инженер в Express42
 
   # Header and footer text
   header_text: >
