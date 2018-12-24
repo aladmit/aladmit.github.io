@@ -8,6 +8,8 @@ tags: ["конспект", "trunk", "доклад"]
 
 Суть: Trunk Based Development лучшая модель ветвления, потому что позволяет нам делать очень короткие итерации и деплоить все подряд за счет применение Feature Flags и Branch By Abstraction.
 
+{% include youtube.html id="Iq0Nm_cc0wo" %}
+
 ## Пруфы
 
 * В State Of DevOps 2018 нашли корреляцию между применением Trunk Based Development и производительностью компаний(Elite и High Performers)
