@@ -23,7 +23,7 @@ tags: ["конспект", "trunk", "доклад"]
 * Ветки живут **МАКСИМУМ 2 ДНЯ**(кроме master)
 * Feature Flags и Branch By Abstraction
 * Continuous Code Review
-* master всегда готов к диплом, даже если в нем есть неготовые фичи
+* master всегда готов к деплою, даже если в нем есть неготовые фичи
 
 ### Feature Flags
 
