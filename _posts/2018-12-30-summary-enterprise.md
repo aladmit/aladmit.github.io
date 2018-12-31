@@ -3,7 +3,7 @@ layout: post
 title: Конспект доклада "Что нужно, чтобы DevOps работал в enterprise компаниях. Никита Борзых" с DevOps Moscow New Year Party
 feature-img: ""
 category: ["summary"]
-tags: ["конспект"]
+tags: ["конспект", "enterprise", "culture"]
 ---
 
 Суть: В компании должна быть стратегия цифровой трансформации, а на всех уровнях компании должно быть понимание DevOps.
