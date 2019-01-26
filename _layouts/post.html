@@ -12,10 +12,20 @@ layout: default
   </header>
   <section class="post-content">
     {{ content }}
-
-    <p>P.S. Следить за выходами постов можно в <b><a href="https://t.me/aladmit_world">телеграм канале</a></b></p>
-    <p>P.P.S. Если вы нашли ошибку, создайте issue или pr в <a href="https://github.com/aladmit/aladmit.github.io">репозитории с блогом</a>.</p>
   </section>
+  <footer style="padding: 8% 20%;">
+    <h3>Подписаться на блог</h3>
+    <ul>
+      <li><a href="http://eepurl.com/geAboD">Email рассылка</a></li>
+      <li><a href="{{ site.theme_settings.telegram }}">Telegram</a></li>
+      <li><a href="https://twitter.com/{{ site.theme_settings.twitter }}">Twitter</a></li>
+      <li><a href="https://www.facebook.com/{{ site.theme_settings.facebook }}">Facebook</a></li>
+      <li><a href="/feed.xml">RSS</a></li>
+    </ul>
+    <p>
+      Если вы нашли ошибку в тексте, у вас есть вопросы или пожелания, создайте issue или PR в <a href="https://github.com/aladmit/aladmit.github.io"><u>репозитории блога</u></a>
+    </p>
+  </footer>
   {% include tags_list.html tags=page.tags tag_count=page.tags.size %}
 </article>
 

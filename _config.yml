@@ -24,7 +24,7 @@ theme_settings:
   behance:
   bitbucket:
   dribbble:
-  facebook:
+  facebook: "aladmit"
   flickr:
   gitlab:
   github: "aladmit"
@@ -37,9 +37,11 @@ theme_settings:
   stack_exchange:
   steam:
   tumblr:
-  twitter: postgred
+  twitter: aladmit_twit
   wordpress:
   youtube:
+  mailchimp_company: http://eepurl.com/geAboD
+  telegram: https://t.me/aladmit_world
 
   # Scripts
   google_analytics: UA-129388859-1
