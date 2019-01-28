@@ -45,7 +45,7 @@ theme_settings:
 
   # Scripts
   google_analytics: UA-129388859-1
-  disqus_shortname:
+  disqus_shortname: aladmit
   katex: false # Enable if using math markup
   search: false # Enable the search feature
 
