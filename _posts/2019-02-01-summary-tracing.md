@@ -131,3 +131,4 @@ Trace-ID виден в хедере всех запросов, по нему м�
 
 * [Трансляция митапа](https://www.youtube.com/watch?v=beOphYOAYy4)
 * [Чат SPb Reliability Meetup в Telegram](https://t.me/spb_reliability)
+* [Сайт митапа](http://spb.reliability.tilda.ws/)
