@@ -13,7 +13,7 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <p>Александров Андрей — DevOps-консультант, ведущий <a href="https://devopsdeflope.ru/">DevOps Deflope</a>, инженер в Express42</p>
+    <p>Александров Андрей — DevOps-консультант, ведущий подкаста<a href="https://devopsdeflope.ru/">DevOps Deflope</a>, инженер в <a href="https://express42.com/">Express42</a></p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
