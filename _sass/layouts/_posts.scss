@@ -70,3 +70,15 @@ header {
     }
   }
 }
+
+@media only screen and (max-device-width: 480px) {
+  .feature-image {
+    header {
+      padding: 8% 5%;
+    }
+
+    .post-content {
+      padding: 5% 5%;
+    }
+  }
+}
