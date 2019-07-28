@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Конспект доклада "Зачем нам нужно сообщество? Александр Титов" с DevOps Moscow New Year Party
+title: Конспект "Зачем нам нужно сообщество? Александр Титов"
 feature-img: ""
 category: ["summary"]
 tags: ["конспект"]

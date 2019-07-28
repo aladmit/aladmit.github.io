@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Конспект доклада "Что нужно, чтобы DevOps работал в enterprise компаниях. Никита Борзых" с DevOps Moscow New Year Party
+title: Конспект "Что нужно, чтобы DevOps работал в enterprise компаниях. Никита Борзых"
 feature-img: ""
 category: ["summary"]
 tags: ["конспект", "enterprise", "culture"]

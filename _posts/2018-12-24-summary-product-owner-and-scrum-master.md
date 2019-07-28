@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Конспект доклада "Scrum Master и Product Owner – эффективное взаимодействие. Анастасия Маркони" с рождественского Scrum Meetup
+title: Конспект "Scrum Master и Product Owner – эффективное взаимодействие. Анастасия Маркони"
 feature-img: ""
 category: ["summary"]
 tags: ["конспект", "scrum", "доклад"]

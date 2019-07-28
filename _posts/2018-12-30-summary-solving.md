@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Конспект доклада "Решение выдуманных проблем реальными способами. Усков Александр" с DevOps Moscow New Year Party
+title: Конспект "Решение выдуманных проблем реальными способами. Усков Александр"
 feature-img: ""
 category: ["summary"]
 tags: ["конспект", "security"]

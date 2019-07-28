@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Конспект доклада "Страх и ненависть DevSecOps Шабалин Юрий, Swordfish Security"
+title: Конспект "Страх и ненависть DevSecOps Шабалин Юрий"
 feature-img: ""
 category: ["summary"]
 tags: ["конспект", "security"]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Конспект доклада "Rsyslog как я перестал бояться и полюбил обработку логов.  Сергей Печенко" с DevOps Moscow New Year Party
+title: Конспект "Rsyslog как я перестал бояться и полюбил обработку логов. Сергей Печенко"
 feature-img: ""
 category: ["summary"]
 tags: ["конспект", "logging"]
