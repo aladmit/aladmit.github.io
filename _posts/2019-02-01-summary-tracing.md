@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Конспект доклада "Трейсинг распределенных систем. Егор Мыскин, PropellerAds" с SPb Reliability Meetup
+title: Конспект "Трейсинг распределенных систем. Егор Мыскин"
 feature-img: ""
 category: ["summary"]
 tags: ["summary", "tracing"]

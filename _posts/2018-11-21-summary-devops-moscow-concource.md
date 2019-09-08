@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Конспект доклада "Concource CI с кубиками на чистом YAML. Максим Залысин"
+title: Конспект "Concource CI с кубиками на чистом YAML. Максим Залысин"
 feature-img: ""
 category: ["summary"]
 tags: ["конспект", "ci", "cd"]

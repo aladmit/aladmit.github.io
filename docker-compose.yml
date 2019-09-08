@@ -1,0 +1,9 @@
+version: '3'
+services:
+  blog:
+    build: .
+    command: s --host 0.0.0.0 --drafts
+    volumes:
+      - .:/app
+    ports:
+      - "127.0.01:4000:4000"

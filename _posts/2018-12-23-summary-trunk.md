@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Конспект моего доклада "Почему Trunk Based Development — лучшая модель ветвления"
+title: Почему Trunk Based Development — лучшая модель ветвления
 feature-img: ""
 category: ["summary"]
 tags: ["конспект", "trunk", "доклад"]
