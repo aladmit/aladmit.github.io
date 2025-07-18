@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { Tags } from "../../../../i18n/i18n";
+interface Props {
+  tag: keyof Tags;
+  entries: CollectionEntry<"notes">[];
+}
+
+const { tag, entries } = Astro.props;
+
+import Tag from "../../../../layouts/Tag.astro";
+import { getNotesSortedByDate } from "../../../../i18n/utils";
+
+export async function getStaticPaths() {
+  const noteCollection = await getNotesSortedByDate("en");
+
+  const tags = [
+    ...new Set(noteCollection.map((entry) => entry.data.tags).flat()),
+  ];
+
+  return tags.map((tag) => ({
+    params: { slug: tag },
+    props: {
+      tag: tag,
+      entries: noteCollection.filter((note) => note.data.tags.includes(tag)),
+    },
+  }));
+}
+---
+
+<Tag tag={tag} entries={entries} />

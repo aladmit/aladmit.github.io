@@ -1,0 +1,19 @@
+---
+import Note from "../../../layouts/Note.astro";
+import { getNotesSortedByDate } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  const notesCollection = await getNotesSortedByDate("en");
+  return notesCollection.map((entry) => ({
+    params: { slug: entry.slug.substring("en".length) },
+    props: { entry, notesCollection },
+  }));
+}
+
+const { entry, notesCollection } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Note frontmatter={entry.data} {notesCollection}>
+  <Content />
+</Note>

@@ -1,0 +1,70 @@
+---
+interface Props {
+  style: string; // primary, secondary, light
+  href: string;
+  classes?: string;
+  rel?: string;
+  target?: string;
+}
+
+const { style, href, classes, rel, target } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`font-regular btn btn-bd-${style} ${classes ? classes : ""}`}
+  rel={rel}
+  target={target}
+>
+  <slot />
+</a>
+
+<style>
+  .btn-bd-primary {
+    letter-spacing: 0.5px;
+    --bs-btn-padding-x: 16px;
+    --bs-btn-padding-y: 6px;
+    --bs-btn-border-radius: 100px;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: rgba(108, 56, 255, 1);
+    --bs-btn-border-color: rgba(108, 56, 255, 1);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: rgba(108, 56, 255, 1);
+    --bs-btn-active-color: rgba(108, 56, 255, 1);
+    --bs-btn-active-bg: rgba(108, 56, 255, 1);
+    --bs-btn-active-border-color: rgba(108, 56, 255, 1);
+  }
+
+  .btn-bd-secondary {
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    --bs-btn-padding-x: 16px;
+    --bs-btn-padding-y: 6px;
+    --bs-btn-border-radius: 100px;
+    --bs-btn-color: rgba(44, 44, 43, 1);
+    --bs-btn-bg: rgba(244, 244, 244, 1);
+    --bs-btn-border-color: rgba(244, 244, 244, 1);
+    --bs-btn-hover-color: rgba(44, 44, 43, 1);
+    --bs-btn-hover-bg: rgba(244, 244, 244, 1);
+    --bs-btn-active-color: rgba(44, 44, 43, 1);
+    --bs-btn-active-bg: rgba(244, 244, 244, 1);
+    --bs-btn-active-border-color: rgba(244, 244, 244, 1);
+  }
+
+  .btn-bd-light {
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    --bs-btn-padding-x: 16px;
+    --bs-btn-padding-y: 6px;
+    --bs-btn-border-radius: 100px;
+    --bs-btn-color: rgba(44, 44, 43, 1);
+    --bs-btn-bg: #ffffff;
+    --bs-btn-border-color: rgba(238, 238, 238, 1);
+    --bs-btn-hover-color: rgba(44, 44, 43, 1);
+    --bs-btn-hover-bg: #ffffff;
+    --bs-btn-hover-border-color: rgba(238, 238, 238, 1);
+    --bs-btn-active-color: rgba(44, 44, 43, 1);
+    --bs-btn-active-bg: #ffffff;
+    --bs-btn-active-border-color: rgba(238, 238, 238, 1);
+  }
+</style>

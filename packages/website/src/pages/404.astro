@@ -1,0 +1,31 @@
+---
+import '../styles/base.scss';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8">
+		<title>{t('404.title')}</title>
+	</head>
+	<body>
+        <div class="center">
+            <svg width="120" height="120" fill="none" version="1.1" id="svg4" xmlns="http://www.w3.org/2000/svg"> <path fill="#532eba" fill-rule="evenodd" d="m 59.99829,0.52230987 51.51,29.73884713 V 89.738851 L 93.931033,99.887517 V 40.175272 l -19.684702,-11.268906 0.0069,-0.0035 L 59.998203,20.728664 26.065461,40.175315 V 99.88756 L 8.4917105,89.738894 V 30.261157 Z M 79.44144,48.370522 60.019295,37.126121 40.555141,48.370522 V 65.548688 L 60.043801,76.90161 79.44144,65.6012 Z m 0,33.544159 -19.44315,11.254903 v -0.01401 0.01401 L 40.555141,81.883175 V 108.2508 L 59.99829,119.47769 79.44144,108.2508 Z" clip-rule="evenodd" id="path2" style="stroke-width:3.50075" /></svg>
+            <h1><span class="statusMessage">{t('404.description')}</span></h1>
+        </div>
+	</body>
+</html>
+
+<style>
+    .center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+</style>

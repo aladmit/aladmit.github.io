@@ -1,0 +1,19 @@
+---
+import { getLangFromUrl, useTranslations, useLocations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const l = useLocations(lang);
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href={`/${lang}/`} class="link-secondary">{t("nav.main")} </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href={l("articles")} class="link-secondary">{t("nav.articles")} </a>
+    </li>
+
+    <slot />
+  </ol>
+</nav>

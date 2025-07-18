@@ -1,0 +1,27 @@
+---
+import Main from "./Main.astro";
+import RightSidebar from "../components/RightSidebar.astro";
+import NoteList from "../components/NoteList.astro";
+
+import {
+  getLangFromUrl,
+  useTranslations,
+  getNotesSortedByDate,
+} from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const notesCollection = await getNotesSortedByDate(lang);
+---
+
+<Main>
+  <section class="row">
+    <div class="col-8">
+      <h1>{t("nav.recent-notes")}</h1>
+      <NoteList {lang} {notesCollection} />
+    </div>
+    <div class="col">
+      <RightSidebar notesCollection={notesCollection} />
+    </div>
+  </section>
+</Main>

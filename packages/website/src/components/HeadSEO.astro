@@ -1,0 +1,78 @@
+---
+interface Props {
+  frontmatter: any;
+}
+const { frontmatter = {} } = Astro.props;
+
+import { OPEN_GRAPH } from "../config";
+
+import { SEO } from "astro-seo";
+import { getOgImagePath } from "../utils/openGraph";
+const ogImageURL = new URL(getOgImagePath(Astro.url.pathname), Astro.url.origin)
+  .href;
+
+import {
+  getLangFromUrl,
+  useLocations,
+  useTranslations,
+  getLocale,
+} from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const l = useLocations(lang);
+
+const authorUrl = new URL(l("author"), Astro.site).toString();
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const formattedContentTitle = frontmatter.title
+  ? `${frontmatter.title} 🚀 ${t("title")}`
+  : t("title");
+const pageDescription = frontmatter.description
+  ? frontmatter.description
+  : t("description");
+---
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+<title>
+  {frontmatter.title ? `${frontmatter.title} 🚀 ${t("title")}` : t("title")}
+</title>
+
+<SEO
+  description={pageDescription}
+  canonical={canonicalURL}
+  twitter={{
+    card: "summary_large_image",
+    site: OPEN_GRAPH.twitter,
+    creator: OPEN_GRAPH.twitter,
+    image: ogImageURL,
+  }}
+  openGraph={{
+    basic: {
+      title: formattedContentTitle,
+      type: frontmatter.title ? "article" : "website",
+      image: ogImageURL,
+      url: canonicalURL,
+    },
+    article: {
+      authors: [authorUrl],
+      publishedTime: frontmatter.published
+        ? frontmatter.published.toISOString()
+        : null,
+      modifiedTime: frontmatter.updated
+        ? frontmatter.updated.toISOString()
+        : null,
+    },
+    optional: {
+      locale: getLocale(lang),
+      siteName: t("title"),
+      description: pageDescription,
+    },
+    image: {
+      url: ogImageURL,
+      secureUrl: ogImageURL,
+      alt: pageDescription,
+      type: "image/png",
+      width: 630,
+      height: 315,
+    },
+  }}
+/>

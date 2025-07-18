@@ -1,0 +1,41 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "@jsdevtools/rehype-url-inspector": "^2.0.2",
+    "add": "^2.0.6",
+    "astro": "^5.1.9",
+    "astro-robots-txt": "^1.0.0",
+    "astro-seo": "^0.8.4",
+    "bootstrap": "^5.3.3",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "react": "^18.3.1",
+    "rehype-add-classes": "^1.0.0",
+    "rehype-external-links": "^3.0.0",
+    "sass": "^1.83.4",
+    "satori": "^0.11.3",
+    "sharp": "^0.33.5",
+    "typescript": "^5.7.3",
+    "vfile": "^6.0.3"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/react": "^4.1.6",
+    "@astrojs/rss": "^4.0.11",
+    "@types/markdown-it": "^14.1.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "react-dom": "^18.3.1"
+  }
+}

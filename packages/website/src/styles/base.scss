@@ -1,0 +1,91 @@
+// Toggle global options here
+$enable-dark-mode: false;
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// Place for changing bootstrap variables
+$primary: rgba(108, 56, 255, 1);
+
+$link-color: $primary;
+$link-decoration: none;
+
+$font-family-base: $font-family-monospace;
+$font-size-base: 1.125rem;
+$h1-font-size: 2.25rem;
+$breadcrumb-divider-color: $secondary;
+
+// Required by bootstrap
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+// Optional bootstrap components
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+// @import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+// @import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+// @import "bootstrap/scss/modal";
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+// @import "bootstrap/scss/offcanvas";
+// @import "bootstrap/scss/placeholders";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
+
+// Custom styles
+blockquote {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: rgba(247, 249, 251, 1);
+  // border-radius: 20px;
+  border-radius: var(--bs-border-radius);
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+.ratio {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: $font-weight-semibold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--bs-border-radius) !important; 
+}
+
+p {
+  text-align: justify;
+}

@@ -1,0 +1,147 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  notesCollection: CollectionEntry<"notes">[];
+}
+const { notesCollection } = Astro.props;
+
+import {
+  getLangFromUrl,
+  useTranslations,
+  useLocations,
+  useTags,
+  getNoteUrl,
+} from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const l = useLocations(lang);
+const tTags = useTags(lang);
+import { allowedTags } from "../content/config";
+import type { Tags } from "../i18n/i18n";
+
+let entriesByTag: {
+  [tag: string]: any;
+} = {};
+
+// create tag arrays first to enforce tag order
+allowedTags.map((tag) => {
+  entriesByTag[tag] = [];
+});
+
+notesCollection.forEach((entry) => {
+  entry.data.tags.forEach((tag) => {
+    entriesByTag[tag].push(entry);
+  });
+});
+---
+
+<div class="card">
+  <div class="card-header ms-3 mt-2">
+    {t("nav.notes-by-tag")}
+  </div>
+  <div class="card-body ms-3">
+    <ul class="list-unstyled">
+      <li class="mb-1">
+        <a
+          href={l("articles")}
+          class="btn d-inline-flex align-items-center rounded border-0 star"
+          >{t("nav.recent-notes")}</a
+        >
+      </li>
+      {
+        Object.keys(entriesByTag).map((tag) => {
+          return (
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target={`#${tag}-collapse`}
+                aria-expanded="false"
+              >
+                {tTags(tag as keyof Tags)}
+              </button>
+              <div class="collapse" id={`${tag}-collapse`}>
+                <ul>
+                  {entriesByTag[tag].map((entry: any) => {
+                    return (
+                      <li>
+                        <a href={getNoteUrl(lang, entry.slug)} rel="author">
+                          {entry.data.title}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .card {
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(225, 225, 225, 1);
+  }
+
+  .card-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: none;
+    background-color: transparent;
+    padding-bottom: 0px;
+  }
+
+  .card-body {
+    padding-top: 0px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    font-size: 0.9rem;
+    color: rgba(44, 44, 43, 1);
+  }
+
+  a.star {
+    font-size: 1rem;
+  }
+
+  a.star::before {
+    content: " ";
+    position: relative;
+    right: 10px;
+    width: 18px;
+    height: 19px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../assets/star.svg");
+  }
+
+  button::before {
+    content: " ";
+    position: relative;
+    right: 10px;
+    width: 18px;
+    height: 19px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../assets/minus.svg");
+  }
+
+  button.collapsed::before {
+    content: " ";
+    position: relative;
+    right: 10px;
+    width: 18px;
+    height: 19px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../assets/plus.svg");
+  }
+</style>

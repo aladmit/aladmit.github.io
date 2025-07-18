@@ -1,0 +1,27 @@
+---
+description: Paid communities appear to be more resilient to growing membership and maintaining an applied agenda.
+tags:
+  - other
+published: 2021-04-18
+title: I think that my future sources of knowledge will mainly be paid chats
+---
+
+One of the problems I occasionally think about is how to grow when you are already good at what you do. When you don't know anything, everything is simple. You go to school to get the absolute minimum, which is valuable only because it allows you to start mastering more complex skills. With basic skills, you either go to college or buy courses on "how to get into IT" to gain minimal professional skills. With these skills, you go to work to gain real experience.
+
+And... After some time, after gaining experience and becoming a mid-level specialist, a gap begins. From this point on, there is no ready-made beaten path, instruction, or course that will significantly improve your existing expertise.
+
+The first thing I encountered when trying to solve this problem for myself is gathering authoritative sources. And now I'm subscribed to Techradar, InfoQ, Martin Fowler, various experts on Twitter. And it seemed to be all good! Sit, read, learn, everything at hand! But as it turned out, this solves one problem but creates a bunch of others)) What's worth reading from the huge stream of information? Do I have enough experience to correctly understand the material? Was there anything super important that I missed in this huge flow? Am I missing trends? Is my skepticism about new ideas justified? So I realized that sources are useful but not enough.
+
+I pondered. Where did all these sources come from in the first place? How did it happen? Nobody intentionally Googled them. And then I realized that it's all about knowing the right people and communicating with the right people. All our main sources came from communicating with people just like me! Hence the quite banal and old idea: to develop, you need to communicate with people in this field. This idea is now exploited by almost everyone. Every course has a chat, conferences, meetups, collective Twitter accounts, YouTube channels, and God knows what else. And I actively participated in all these chats until I noticed the same trend in all of them. As the number of people grows, they all slide into crap. Completely all. Without exception. The level of discussion drops, toxic people appear, and in the end, it becomes uninteresting for smart regulars to write. New smart people in the chat do not stay because they quickly get bored with it all.
+
+At the moment, I am only active in the Russian zettelkasten community, and even then, it's clearly not for long, as the trend towards a decline is already evident to the naked eye. Until recently, I had no idea what to do about it. The existing chats are poorly moderated, and it's unclear whether it would be any better if I did it myself, as it would consume a lot of time. I considered completely closed chats, but the main problem with them is that any community needs new people, without whom it will all turn into an echo chamber or die out.
+
+And recently, I saw how it can be done to make it work! I saw it in the example of the SVTV+ chat. This is a chat for patrons of [SVTV](https://www.youtube.com/channel/UCWjEiMNZv4g3P9BWbrtMjyA), a YouTube channel run by Mikhail Svetov, who promotes libertarianism in Russia. They discuss a lot there, but the essence is not in the content, but in how the value of the channel is regulated for all participants. To stay in the channel, you pay a monthly fee. At the time of writing, it's $15 (1150 rubles). Therefore, all participants are interested in making their investment pay off. Someone constantly brings up a topic for discussion, suggests guests, we discuss some ideas and argue. And the conversation is much more productive than in any other chat I've seen. The entry barrier is higher, idiots don't come, and the money spent pushes people to create value.
+
+In reality, there are still idiots and toxic people who show up, but they can be dealt with. In the last two months, Mikhail has released a lot of videos, his audience has grown, and as a result, the number of patrons who pay $15 for access to the chat has sharply increased to 160. And now we see strange people who bring whatever nonsense they have and begin to lower the value of the chat for everyone. And Mikhail doesn't start moderating, he just proposed to raise the price for the chat. And the backbone of the chat supported it! I haven't seen any objections or requests not to do it. In fact, several people even suggested raising the price before Mikhail did. It's that simple. We raise the price, the toxic and idiotic people drop out, and the people who create the main value of the chat remain.
+
+I think this scheme works precisely because there is an expectation of value. You pay money, you have an incentive to actively participate in it. During the time you participated, your subjective value of this activity increased, and you are willing to pay more to keep it developing. Sounds like a solution to the problem.
+
+I liked this approach. Perhaps if I finally fix my constantly anxious state and start actively managing my channel, I will be able to gather enough people to create a similar community. We'll see)
+
+P.S. If you already know of similar paid chats about DevOps and development processes or knowledge management and leadership, please let me know.

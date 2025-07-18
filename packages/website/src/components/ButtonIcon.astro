@@ -1,0 +1,50 @@
+---
+interface Props {
+  href: string;
+  icon: ImageMetadata;
+  classes?: string;
+}
+
+const { href, icon, classes } = Astro.props;
+const backgroundImage = `url("${icon.src}")`;
+---
+
+<a
+  href={href}
+  rel="nofollow"
+  target="_blank"
+  class={`font-regular btn ${classes ? classes : ""}`}
+>
+  <slot />
+</a>
+
+<style define:vars={{ backgroundImage }}>
+  a {
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    --bs-btn-padding-x: 16px;
+    --bs-btn-padding-y: 6px;
+    --bs-btn-border-radius: 100px;
+    --bs-btn-color: rgba(44, 44, 43, 1);
+    --bs-btn-bg: rgba(244, 244, 244, 1);
+    --bs-btn-border-color: rgba(244, 244, 244, 1);
+    --bs-btn-hover-color: rgba(44, 44, 43, 1);
+    --bs-btn-hover-bg: rgba(244, 244, 244, 1);
+    --bs-btn-active-color: rgba(44, 44, 43, 1);
+    --bs-btn-active-bg: rgba(244, 244, 244, 1);
+    --bs-btn-active-border-color: rgba(244, 244, 244, 1);
+  }
+
+  a::before {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    left: 3px;
+    content: " ";
+    width: 18px;
+    height: 19px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: var(--backgroundImage);
+  }
+</style>

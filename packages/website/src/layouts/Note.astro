@@ -1,0 +1,96 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { InferEntrySchema } from "astro:content";
+interface Props {
+  frontmatter: InferEntrySchema<"notes">;
+  notesCollection: CollectionEntry<"notes">[];
+}
+
+const { frontmatter, notesCollection } = Astro.props;
+
+import BreadCrumbs from "../components/BreadCrumbs.astro";
+import Main from "./Main.astro";
+import RightSidebar from "../components/RightSidebar.astro";
+
+import {
+  getLangFromUrl,
+  getTagUrl,
+  useTranslations,
+  useTags,
+  sortTagsByPriority,
+  useLocations,
+} from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const l = useLocations(lang);
+const tTags = useTags(lang);
+
+const sortedTags = sortTagsByPriority(lang, frontmatter.tags);
+---
+
+<Main>
+  <section class="row">
+    <div class="col-lg-8">
+      <BreadCrumbs tags={frontmatter.tags}>
+        <li class="breadcrumb-item">
+          {
+            sortedTags.map((tag, i) => {
+              const tagTitle = tTags(tag).toLowerCase();
+
+              if (sortedTags.length - 1 == i) {
+                return (
+                  <a href={getTagUrl(lang, tag)} class="link-secondary">
+                    {tagTitle}
+                  </a>
+                );
+              }
+              return (
+                <a href={getTagUrl(lang, tag)} class="link-secondary">
+                  {tagTitle},
+                </a>
+              );
+            })
+          }
+        </li>
+      </BreadCrumbs>
+      <h1>{frontmatter.title}</h1>
+      <p class="link-secondary">
+        {
+          t("article.published") +
+            ": " +
+            frontmatter.published.toLocaleDateString("ru-RU")
+        }
+        {
+          frontmatter.updated
+            ? t("article.updated") +
+              ": " +
+              frontmatter.updated.toLocaleDateString("ru-RU")
+            : ""
+        }
+      </p>
+
+      <slot />
+
+      <blockquote>
+        <p>
+          {t("article.quote-1")}<a href={t("links.tg")}>@aladmit</a>{
+            t("article.quote-2")
+          }<a href={"mailto:" + t("links.email")}>{t("links.email")}</a>
+        </p>
+      </blockquote>
+      <div class="row mb-4">
+        <div class="d-flex flex-row align-items-center justify-content-start">
+          <span class="font-medium">
+            {t("article.subscribe-1")}
+            <a href={t("links.tgchannel")}>{t("links.tgchannel_text")}</a>
+            {t("or")}
+            <a href={l("rss")}>RSS</a>{t("article.subscribe-2")}.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <RightSidebar notesCollection={notesCollection} />
+    </div>
+  </section>
+</Main>

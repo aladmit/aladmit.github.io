@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { Tags } from "../i18n/i18n";
+interface Props {
+  tag: keyof Tags;
+  entries: CollectionEntry<"notes">[];
+}
+const { tag, entries } = Astro.props;
+
+import Main from "./Main.astro";
+import RightSidebar from "../components/RightSidebar.astro";
+import BreadCrumbs from "../components/BreadCrumbs.astro";
+import NoteList from "../components/NoteList.astro";
+
+import { getLangFromUrl, useTags, getNotesSortedByDate } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const tTags = useTags(lang);
+
+const notesCollection = await getNotesSortedByDate(lang);
+---
+
+<Main>
+  <section class="row">
+    <div class="col-8">
+      <BreadCrumbs>
+        <li class="breadcrumb-item link-secondary">
+          {tTags(tag).toLowerCase()}
+        </li>
+      </BreadCrumbs>
+      <NoteList {lang} notesCollection={entries} />
+    </div>
+    <div class="col">
+      <RightSidebar {notesCollection} />
+    </div>
+  </section>
+</Main>

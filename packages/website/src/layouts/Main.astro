@@ -1,0 +1,58 @@
+---
+import "../styles/base.scss";
+
+import HeadSEO from "../components/HeadSEO.astro";
+import Navbar from "../components/Navbar.astro";
+
+import { ClientRouter } from "astro:transitions";
+
+const { frontmatter = {} } = Astro.props;
+const currentPage = Astro.url.pathname;
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={t("title")}
+      href={new URL(`${lang}/blog/feed.xml`, Astro.site)}
+    />
+    <HeadSEO {frontmatter} />
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <Navbar {currentPage} />
+      </div>
+      <slot />
+    </div>
+    <script>
+      // import 'bootstrap/js/dist/alert';
+      // import 'bootstrap/js/dist/button';
+      // import 'bootstrap/js/dist/carousel';
+      import "bootstrap/js/dist/collapse.js";
+      // import 'bootstrap/js/dist/dropdown';
+      // import 'bootstrap/js/dist/modal';
+      // import 'bootstrap/js/dist/offcanvas';
+      // import 'bootstrap/js/dist/popover';
+      // import 'bootstrap/js/dist/scrollspy';
+      // import 'bootstrap/js/dist/tab';
+      // import 'bootstrap/js/dist/toast';
+      // import 'bootstrap/js/dist/tooltip';
+    </script>
+  </body>
+</html>

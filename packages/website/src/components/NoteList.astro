@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { languages } from "../i18n/i18n";
+
+interface Props {
+  lang: keyof typeof languages;
+  notesCollection: CollectionEntry<"notes">[];
+}
+const { lang, notesCollection } = Astro.props;
+
+import { getNoteUrl } from "../i18n/utils";
+---
+
+{
+  notesCollection.map((entry, i) => {
+    if (i == 0) {
+      return (
+        <section class="mt-3">
+          <h2>
+            <a href={getNoteUrl(lang, entry.slug)}>{entry.data.title}</a>
+          </h2>
+          <p>{entry.data.description}</p>
+        </section>
+      );
+    }
+
+    return (
+      <section class="mt-4 pt-2">
+        <h2>
+          <a href={getNoteUrl(lang, entry.slug)}>{entry.data.title}</a>
+        </h2>
+        <p>{entry.data.description}</p>
+      </section>
+    );
+  })
+}
+
+<style>
+  h2 > a {
+    color: var(--theme-text);
+    text-decoration: none;
+  }
+
+  h2 > a:hover {
+    text-decoration: none;
+  }
+</style>
